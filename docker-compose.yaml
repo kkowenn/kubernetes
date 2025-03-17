@@ -1,0 +1,17 @@
+services:
+  rancher:
+    image: rancher/rancher:latest
+    container_name: rancher
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - "ACME_DOMAIN=141-11-156-155.gumon.io"
+    volumes:
+      - rancher-data:/var/lib/rancher
+
+volumes:
+  rancher-data:
+    driver: local

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-external
+spec:
+  selector:
+    app: mongodb
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
+      nodePort: 32000  # Choose a port between 30000-32767

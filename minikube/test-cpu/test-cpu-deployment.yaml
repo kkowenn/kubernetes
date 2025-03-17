@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-cpu
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-cpu
+  template:
+    metadata:
+      labels:
+        app: test-cpu
+    spec:
+      containers:
+      - name: test-cpu
+        image: gumon.dev/lib/test-cpu:latest  # Replace with actual image if different
+        ports:
+        - containerPort: 5000
+      - env
+
+      
